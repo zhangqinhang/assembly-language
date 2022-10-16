@@ -1,0 +1,88 @@
+DATA SEGMENT
+  COUNT DW 0    ;计数
+DATA ENDS   
+
+STACK SEGMENT PARA  STACK
+  BUF DW 20H DUP (0)
+  LEN EQU $-BUF
+STACK ENDS
+
+CODESEG SEGMENT
+ASSUME CS:CODESEG,SS:STACK,DS:DATA
+START:
+;初始化堆栈段ss和数据段ds
+  MOV AX,STACK
+  MOV SS,AX
+  MOV SP,LEN
+  MOV AX,DATA
+  MOV DS,AX
+  
+  MOV CX,64H ;循环100次
+  MOV AX,0
+S:
+    ADD COUNT,01H
+    ADD AX,COUNT
+    LOOP S
+    
+    MOV DL,AL
+    MOV AL,AH
+    CALL DISP_2_HEX
+    MOV AL,DL
+    CALL DISP_2_HEX
+    CALL DISP_CREF
+    MOV AH,4CH
+    INT 21H
+
+  
+;将AL的高四位与低四位分别输出
+DISP_2_HEX:
+  PUSH AX
+  PUSH BX
+  PUSHF
+  MOV  AH,0 ;清零
+  MOV  BL,10H ;作除法
+  DIV  BL  ;AL :商 高位  AH 余数 低位
+  CALL DISP_1_HEX ;输出AL的结果
+  MOV  AL,AH
+  CALL DISP_1_HEX
+  POPF
+  POP BX
+  POP AX
+RET
+
+;输出AL的数字和字母
+DISP_1_HEX:  
+  PUSH AX
+  PUSH DX
+  PUSHF
+  MOV DL,AL
+  CMP DL,09
+  JBE L_1  ;小于等于9则跳过下一条语句
+  ADD DL,27H ;大于10则转换为小写字母并执行到下面的L_1的RET结束
+                ;数字10与字符a差为39（27H）
+;数字输出（1的ascii码为31H）
+L_1:  
+  ADD DL,30H ;数字转换为字符
+  MOV AH,02H
+  INT 21H
+  POPF
+  POP DX
+  POP AX 
+RET
+
+;输出回车换行
+DISP_CREF: 
+ PUSH DX
+ PUSH AX
+ MOV AH,02H
+ MOV DL,0DH
+ INT 21H
+ MOV DL,0AH
+ INT 21H
+ POP AX
+ POP DX
+RET
+
+CODESEG ENDS
+END START
+
