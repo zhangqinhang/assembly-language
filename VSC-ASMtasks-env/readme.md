@@ -1,4 +1,4 @@
-# VSCode template for MASM/TASM via DOSBox
+# 环境部分，使用现有环境VSCode template for MASM/TASM via DOSBox
 
 [中文](readme.zh.md)|[github](https://github.com/xsro/VSC-ASMtasks)|[how it works](doc/how-it-work.md)|[release and download](https://github.com/xsro/VSC-ASMtasks/releases)
 
