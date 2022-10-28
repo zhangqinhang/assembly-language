@@ -103,29 +103,28 @@ if you are notepad++ user,maybe this code is helpful to you
 ```cmd
 cmd /c del d:dos\asm\tasm\t.* & copy  "$(FULL_CURRENT_PATH)" "d:dos\asm\tasm\t.asm" & D:\DOS\DOSBox.exe -noautoexec -c "mount c d:dos\asm\tasm"  -c "c:"  -c "tasm/t/zi t.asm" -c "tlink/v/3 t.obj" -c "t.exe" -c "pause" -c "exit"
 ```
+![image](https://user-images.githubusercontent.com/73733163/198522504-eedabc53-b770-43ff-a44a-b4967de65634.png)
 
-![1666591226395](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666591226395.png)
 
 ## 关于一些指令的含义（）
-
-![1666591513698](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666591513698.png)
+![image](https://user-images.githubusercontent.com/73733163/198522534-9103279e-f309-49fc-a943-9e7211ac0333.png)
 
 
 
 ## 关于怎么找地址：
 
-![1666591632122](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666591632122.png)
+![image](https://user-images.githubusercontent.com/73733163/198522559-625d204b-82d2-49cc-aaff-15f13aafe850.png)
 
 
 
 ## 关于BIOS:
 
-![1666594187949](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666594187949.png)
+![image](https://user-images.githubusercontent.com/73733163/198522583-44b60189-8868-4626-92c5-5930fd605fbb.png)
 
 ## 关于显存
 
-![1666594390876](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666594390876.png)
+![image](https://user-images.githubusercontent.com/73733163/198522599-cbc31f30-56c5-436a-9040-26cb5ed677b3.png)
 
 ## 8086的寄存器
 
-![1666594558445](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666594558445.png)
+![image](https://user-images.githubusercontent.com/73733163/198522616-d35ed965-16ef-4953-8457-2ab5990e361d.png)
