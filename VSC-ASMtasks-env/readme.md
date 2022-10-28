@@ -103,3 +103,29 @@ if you are notepad++ user,maybe this code is helpful to you
 ```cmd
 cmd /c del d:dos\asm\tasm\t.* & copy  "$(FULL_CURRENT_PATH)" "d:dos\asm\tasm\t.asm" & D:\DOS\DOSBox.exe -noautoexec -c "mount c d:dos\asm\tasm"  -c "c:"  -c "tasm/t/zi t.asm" -c "tlink/v/3 t.obj" -c "t.exe" -c "pause" -c "exit"
 ```
+
+![1666591226395](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666591226395.png)
+
+## 关于一些指令的含义（）
+
+![1666591513698](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666591513698.png)
+
+
+
+## 关于怎么找地址：
+
+![1666591632122](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666591632122.png)
+
+
+
+## 关于BIOS:
+
+![1666594187949](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666594187949.png)
+
+## 关于显存
+
+![1666594390876](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666594390876.png)
+
+## 8086的寄存器
+
+![1666594558445](C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\1666594558445.png)
