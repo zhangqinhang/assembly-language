@@ -16,7 +16,7 @@ start:			mov ax,data
 				call show_str				;显示的方法
 				mov ax,4c00h
 				int 21h
-;============================================================
+
 init_data:		mov ax,0B800h
 				mov es,ax
 				mov dh,8		;指定行号
@@ -25,13 +25,13 @@ init_data:		mov ax,0B800h
 				mov si,0
 				mov di,0
 				ret
-;============================================================
+
 show_str:		call clear_screen			;清屏
 				call getRow					;获取指定行号的字节偏移数
 				call getCol					;获取指定列号
 				call show_String			;真正的显示字符串方法
 				ret
-;============================================================
+
 clear_screen:	push cx
 				push dx
 				push es
@@ -48,7 +48,7 @@ clearScreen:	mov es:[bx],dx
 				pop dx
 				pop cx
 				ret
-;============================================================
+
 show_String:	push cx     ;保存下面将要用到的寄存器
 				push ds
 				push es
@@ -73,18 +73,18 @@ showStringRet:	pop di		;还原寄存器
 				pop ds
 				pop cx
 				ret				
-;============================================================
+
 getRow:			mov al,dh
 				mov bl,160   ;一行80字符，160字节
 				mul bl
 				mov di,ax
 				ret
-;============================================================
+
 getCol:			mov al,dl
 				mov bl,2
 				mul bl
 				add di,ax
 				ret
-;============================================================					
+				
 code ends
 end start
